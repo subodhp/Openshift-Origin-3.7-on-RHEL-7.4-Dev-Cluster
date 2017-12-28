@@ -44,3 +44,4 @@ restorecon -rv /etc/named.conf
 named-checkconf -z /etc/named.conf
 echo "1" > /proc/sys/net/ipv4/ip_forward
 ansible-playbook -i /etc/ansible/hosts ~/openshift-ansible-openshift-ansible-3.7.16-1/playbooks/byo/config.yml
+
