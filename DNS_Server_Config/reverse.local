@@ -1,0 +1,16 @@
+$TTL 86400
+@ IN SOA myadmin.local.com. root.local.com. (
+             2011071001 ;Serial
+             3600 ;Refresh
+             1800 ;Retry
+             604800 ;Expire
+             86400 ;Minimum TTL
+       )
+@    IN     NS     myadmin.local.com.
+@    IN     PTR    local.com.
+myadmin           IN         A       192.168.99.200
+mymaster          IN	     A	     192.168.99.201
+mynode            IN         A       192.168.99.202
+200       IN     PTR   myadmin.local.com.
+201       IN     PTR   mymaster.local.com.
+202       IN     PTR   mynode.local.com.

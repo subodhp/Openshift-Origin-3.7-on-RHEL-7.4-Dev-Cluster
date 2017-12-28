@@ -1,0 +1,24 @@
+[OSEv3:children]
+masters
+nodes
+etcd
+
+[OSEv3:vars]
+ansible_ssh_user=root
+openshift_deployment_type=origin
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
+openshift_disable_check=memory_availability,disk_availability,docker_storage
+template_service_broker_install=false
+openshift_enable_service_catalog=false
+openshift_router_selector='node-router=true'
+openshift_registry_selector='node-registry=true'
+
+[masters]
+mymaster.local.com
+
+[etcd]
+mymaster.local.com
+
+[nodes]
+mymaster.local.com openshift_schedulable=true openshift_node_labels="{'node-router': 'true', 'node-registry': 'true', 'node-app': 'true'}"
+mynode.local.com openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
