@@ -8,6 +8,8 @@ Openshift Ansible Installer Version = openshift-ansible-openshift-ansible-3.7.16
 
 Openshift Origin 3.7
 
+Openshift Clients Tool = openshift-origin-client-tools-v3.7.0-7ed6862-linux-64bit
+
 OS Release -
 
 NAME="Red Hat Enterprise Linux Server"
