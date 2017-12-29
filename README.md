@@ -99,4 +99,16 @@ oc rollout latest registry-console
 
 oc rollout latest router
 
+oc new-app https://github.com/openshift/nodejs-ex
 
+oc expose svc/nodejs-ex
+
+oc logs -f bc/nodejs-ex
+
+oc edit bc/nodejs-ex
+
+oc env bc/nodejs-ex GIT_SSL_NO_VERIFY=true
+
+docker pull openshift/origin-sti-builder:v3.7.0
+
+oc delete all --all
