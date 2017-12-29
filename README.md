@@ -112,3 +112,8 @@ oc env bc/nodejs-ex GIT_SSL_NO_VERIFY=true
 docker pull openshift/origin-sti-builder:v3.7.0
 
 oc delete all --all
+
+BuildConfig Template Addition
+env:
+      - name: GIT_SSL_NO_VERIFY
+        value: "true"
