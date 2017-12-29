@@ -117,3 +117,8 @@ BuildConfig Template Addition
 env:
       - name: GIT_SSL_NO_VERIFY
         value: "true"
+
+oc expose svc/nodejs-ex --hostname=www.subodh.local.com
+
+oc env pods --all --list
+
