@@ -13,3 +13,4 @@ $TTL 86400
 myadmin        IN       A       192.168.99.200
 mymaster       IN       A       192.168.99.201
 mynode         IN       A       192.168.99.202
+*.local.com.   300	IN	A	192.168.99.201

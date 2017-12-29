@@ -82,3 +82,21 @@ echo "1" > /proc/sys/net/ipv4/ip_forward
 
 ansible-playbook -i /etc/ansible/hosts ~/openshift-ansible-openshift-ansible-3.7.16-1/playbooks/byo/config.yml
 
+yum install httpd-tools
+
+htpasswd /etc/origin/master/htpasswd root
+
+oc login -u system:admin
+
+oadm policy add-cluster-role-to-user cluster-admin root
+
+(From Master Node, as a last resort)
+oadm policy add-role-to-user cluster-admin root --config=/etc/origin/master/admin.kubeconfig
+
+oc get pods --all-namespaces=true
+
+oc rollout latest registry-console
+
+oc rollout latest router
+
+
